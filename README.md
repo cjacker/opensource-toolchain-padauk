@@ -137,7 +137,7 @@ Then flash firmware as:
 dfu-util -d 0483:df11 -a "@Internal Flash  /0x08000000/064*0002Kg" --dfuse-address 0x08000000 -D build/EASYPDKPROG.dfu
 ```
 
-I also put the pre-built firmware [EASYPDKPROG.dfu](./EASYPDKPROG.dfu) in this repo, you can use it directly.
+I also put the pre-built firmware [EASYPDKPROG.dfu](./EASYPDKPROG.dfu) (development branch) and corresponding `easypdkprog` utility in this repo, you can use it directly.
 
 After `easypdkprog` installed, run `easypdkprog list` will list all supported parts
 
