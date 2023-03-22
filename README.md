@@ -92,7 +92,7 @@ I leave the pre-built `pfs154_prog2_1.hex` firmware and `pfsprog` at correspondi
 ### hardware
 Easypdk programmer is more useful and more powerful. the cons is it's more expensive and very hard to solder at home for beginners, the pros is it can support more parts than Arduino pdkprogsheild.
 
-<img src="./misc/easypdkprogrammer.jpg" width=40% />
+<img src="./easypdkprogrammer/easypdkprogrammer.jpg" width=40% />
 
 You can refer to https://github.com/free-pdk/easy-pdk-programmer-hardware for all resources.
 
@@ -178,7 +178,7 @@ Supported ICs:
 
 You can use breadboard with above breakout boards, for convenient, I made a dock for them, it is able to support different width breakout board and have a LED connected to PA4.
 
-<img src="./misc/devboards.jpg" width="40%" />
+<img src="./misc/dockboard.jpg" width="40%" />
 
 
 # Compiler
