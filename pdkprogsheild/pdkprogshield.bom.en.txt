@@ -59,5 +59,6 @@ ________________________________________________________
     2    |  8P Pin header    | Arduino connector
     1    |  6P Pin header    | Arduino connector
     2    |  8P female header | Sockel for PFS154
+    2    |  DIP8 socket      | Optional: for LM358/MC34063
  ________|___________________|____________________________
 
