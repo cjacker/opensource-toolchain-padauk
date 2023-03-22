@@ -9,6 +9,8 @@ Padauk mainly manufactures One Time Programmable (OTP) parts, But there still so
 
 All their devices are based on Padauks MCU architecture, which is significantly extended over that of the PIC12: It uses separated I/O and SRAM memory regions and allows to address the full range without banking. In contrast to all other devices, the stack is memory mapped. Most instructions execute in a single cycle.
 
+But you also need know that these MCUs have very limited peripherals and resources, for example, they do not have any kind of communication peripherals. UARTs, I2C, and SPI all have to be done in software. And ROM ranges from 1k to 4k words, and RAM ranges from 16 to 256 bytes, etc.
+
 Padauk’s own tool-chain is based on a custom programming language called “Mini-C” with a syntax based on the C-language. This language is only supported by their own tool-chain, including IDE (“Padauk Developer Studio”) and programmer (“Writer”). The tool-chain also uses a custom binary format with encryption/obfuscation. 
 
 Following the discussion on EEVblog, a small community has formed around the Padauk MCU with the goal of creating an open source toolchain for the device. Most of the activities are covered in [this thread](https://www.eevblog.com/forum/blog/eevblog-1144-padauk-programmer-reverse-engineering/).
