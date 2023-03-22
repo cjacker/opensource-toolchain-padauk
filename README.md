@@ -47,7 +47,7 @@ There are two possible combinations available.
 
 ## Arduino pdkprogsheild
 
-One is Arduino uno + [Arduino pdkprogsheild](https://github.com/jjflash65/Padauk-pfs154) (made by yourself) + PFS154 + SOP16 adatper. the cons is this solution only support programming PFS154, the pros is it very easy to solder for beginners.
+One programming solution is Arduino uno + [Arduino pdkprogsheild](https://github.com/jjflash65/Padauk-pfs154) (made by yourself) + PFS154 + SOP16 adatper. the cons is this solution only support programming PFS154, the pros is it's very easy to solder at home for beginners.
 
 <img src="./pdkprogsheild/pics/pdkprogshield-r2.jpg" width="40%" />
 
@@ -97,6 +97,29 @@ A good start is `free-pdk-examples`, but do not use the upstream repo, there are
 ```
 git checkout https://github.com/cjacker/free-pdk-examples.git
 git checkout __io_set0
+```
+
+to build BlinkLED example for PFS154:
+```
+cd BlinkLED 
+make
+```
+the `BlinkLED_PFS154.bin` and `BlinkLED_PFS154.ihx` files will be genereated at `.output` dir.
+
+If you want to build this example for PFS123/PFS173, change the `Makefile` from 
+
+```
+DEVICE = PFS154
+F_CPU = 1000000
+TARGET_VDD_MV = 4000
+TARGET_VDD = 4.0
+```
+To
+```
+DEVICE = PFS173
+F_CPU = 1000000
+TARGET_VDD_MV = 3300
+TARGET_VDD = 3.3
 ```
 
 # Programming
