@@ -92,7 +92,7 @@ The installation of SDCC is very simple, most of Linux distribution today alread
 
 Like 8051, There is no SDK required to start development. To be more precise, what you need is series of C include files to define SFRs of Padauk MCU. 
 
-A good start is `free-pdk-examples`, but do not use the upstream repo, there are some issues need to be fixed, some examples may not working now. you can use my forked repo with these fixes:
+A good start is `free-pdk-examples`, and do not use the upstream repo. there are some issues need to be fixed, some examples may not working now. you can use my forked repo with these fixes:
 
 ```
 git checkout https://github.com/cjacker/free-pdk-examples.git
