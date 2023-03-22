@@ -89,6 +89,7 @@ I leave the pre-built `pfs154_prog2_1.hex` firmware and `pfsprog` at correspondi
 
 ## Easypdk programmer
 
+### hardware
 Easypdk programmer is more useful and more powerful. the cons is it's more expensive and very hard to solder at home for beginners, the pros is it can support more parts than Arduino pdkprogsheild.
 
 <img src="./misc/easypdkprogrammer.jpg" width=40% />
@@ -101,12 +102,81 @@ For easypdk programmer, due to the width between two 8pin female headers is diff
 
 <img src="./easypdkprog-breakout-board-jlc/sop8-sop16.jpg" width="40%" />
 
-The software and firmware for easypdk programmer is https://github.com/free-pdk/easy-pdk-programmer-software.
-
 NOTE, the sop8 and sop16 breakout board are suite for PFS154/PFS173/PFS123/PFC161, please verify the pinout layout of your parts before solder it.
 
+### software
+
+The software and firmware for easypdk programmer can be downloaded from https://github.com/free-pdk/easy-pdk-programmer-software. For supporting more parts, you should use `development` branch. to build and flash the firmware to easypdk programmer, you should have `arm-none-eabi-gcc` GNU toolchain and `dfu-util` installed.
+
+```
+git clone https://github.com/free-pdk/easy-pdk-programmer-software.git
+cd easy-pdk-programmer-software
+git checkout development
+```
+
+To build and install easypdkprog utility
+```
+make
+sudo install -m0755 easypdkprog /usr/bin
+```
+
+To build firmware
+```
+cd Firmware/source
+make
+```
+
+To flash the firmware to easypdk programmer, please hold the button on easypdk programmer and plug it into PC USB port, then run `lsusb`, the output should be:
+```
+0483:df11 STMicroelectronics STM Device in DFU Mode
+```
+Then flash firmware as:
+```
+dfu-util -d 0483:df11 -a "@Internal Flash  /0x08000000/064*0002Kg" --dfuse-address 0x08000000 -D build/EASYPDKPROG.dfu
+```
+
+I also put the pre-built firmware [EASYPDKPROG.dfu](./EASYPDKPROG.dfu) in this repo, you can use it directly.
+
+After `easypdkprog` installed, you can run `easypdkprog list` to list out all supported parts:
+
+```
+$ easypdkprog list
+Supported ICs:
+ MCU390   (0xC31): OTP  : 2048 (14 bit), RAM: 128 bytes (RO)
+ PFC151   (0xCA7): FLASH: 2048 (14 bit), RAM: 128 bytes
+ PFC154   (0x34A): FLASH: 2048 (14 bit), RAM: 128 bytes
+ PFC161   (0xCA7): FLASH: 2048 (14 bit), RAM: 128 bytes
+ PFC232   (0xBA8): FLASH: 2048 (14 bit), RAM: 128 bytes
+ PFS121   (0xCA6): FLASH: 2048 (14 bit), RAM: 128 bytes
+ PFS122   (0xCA6): FLASH: 2048 (14 bit), RAM: 128 bytes
+ PFS123   (0xD44): FLASH: 3072 (15 bit), RAM: 256 bytes
+ PFS154   (0x542): FLASH: 2048 (14 bit), RAM: 128 bytes
+ PFS172   (0xCA6): FLASH: 2048 (14 bit), RAM: 128 bytes
+ PFS172B  (0xCA6): FLASH: 2048 (14 bit), RAM: 128 bytes
+ PFS173   (0xD44): FLASH: 3072 (15 bit), RAM: 256 bytes
+ PFS173B  (0xD44): FLASH: 3072 (15 bit), RAM: 256 bytes
+ PMC131   (0xC83): OTP  : 1536 (14 bit), RAM:  88 bytes (RO)
+ PMC251   (0x058): OTP  : 1024 (16 bit), RAM:  59 bytes (RO)
+ PMC271   (0xA58): OTP  : 1024 (16 bit), RAM:  64 bytes (RO)
+ PMS131   (0xC83): OTP  : 1536 (14 bit), RAM:  88 bytes (RO)
+ PMS132   (0x109): OTP  : 2048 (14 bit), RAM: 128 bytes (RO)
+ PMS132B  (0x109): OTP  : 2048 (14 bit), RAM: 128 bytes (RO)
+ PMS133   (0xC19): OTP  : 4096 (15 bit), RAM: 256 bytes (RO)
+ PMS134   (0xC19): OTP  : 4096 (15 bit), RAM: 256 bytes (RO)
+ PMS150C  (0xA16): OTP  : 1024 (13 bit), RAM:  64 bytes
+ PMS150G  (0x639): OTP  : 1024 (13 bit), RAM:  64 bytes
+ PMS152   (0xA27): OTP  : 1280 (14 bit), RAM:  80 bytes
+ PMS154B  (0xE06): OTP  : 2048 (14 bit), RAM: 128 bytes
+ PMS154C  (0xE06): OTP  : 2048 (14 bit), RAM: 128 bytes
+ PMS15A   (0xA16): OTP  : 1024 (13 bit), RAM:  64 bytes
+ PMS15B   (0x639): OTP  : 1024 (13 bit), RAM:  64 bytes
+ PMS171B  (0xD36): OTP  : 1536 (14 bit), RAM:  96 bytes
+ PMS271   (0xA58): OTP  : 1024 (16 bit), RAM:  64 bytes (RO)
+```
+
 ## Dock board
-You can use breadboard with above breakout boards, for convenient, I made a dock for them, it is able to support two different width
+
+You can use breadboard with above breakout boards, for convenient, I made a dock for them, it is able to support different width breakout board and have a LED connected to PA4.
 
 <img src="./misc/devboards.jpg" width="40%" />
 
@@ -157,8 +227,9 @@ TARGET_VDD = 3.3
 
 # Programming
 
-## for Arduino pdkprogsheild 
-Prepare the pdkprogsheild hardware and `pfsprog` software as mentioned above.
+## for Arduino pdkprogsheild
+
+Prepare the pdkprogsheild hardware and `pfsprog` as mentioned above, plug the standard SOP16 breakout board.
 
 Using `BlinkLED` as example, after built successfully
 
@@ -179,7 +250,34 @@ The output looks like:
  All is done...
 ```
 
+Then you can plug the breakout board to a bread board or dock and connect a LED to PA4, it will blink every 1s.
+
 ## for EasyPDK programmer
+
+Prepare the easypdk programmer hardware and `easypdkprog` as mentioned above, plug the breadout board to easypdk programmer and run `easypdkprog probe`:
+
+```
+Probing IC... found.
+TYPE:FLASH RSP:0x3542 VPP=4.50 VDD=2.00
+IC is supported: PFS154 ICID:0x542
+```
+
+Then program BlinkLED example as
+```
+easypdkprog -n PFS154 write .output/BlinkLED_PFS154.ihx
+```
+or 
+```
+make program
+```
+
+The output looks like:
+```
+Erasing IC... done.
+Writing IC (81 words)... done.
+Calibrating IC
+* IHRC SYSCLK=1000000Hz @ 4.00V ... calibration result: 1004416Hz (0x84)  done.
+```
 
 
 
