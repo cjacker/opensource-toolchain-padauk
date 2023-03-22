@@ -17,4 +17,18 @@ As of today, reverse engineering the [instruction encoding](https://free-pdk.git
 
 Since the open source tool-chain is based on the Small Device C-Compiler (SDCC) and therefore does support Standard C and common binary output formats (intel hex and bin), including those used by the Easy PDK Programmer.
 
+For more details of Opensource toolchain and other resources, please refer to https://free-pdk.github.io/.
 
+
+# Hardware prerequiest
+- PFS154/PFS123 ICs
+- SOP16/SOP8 adapter board
+- Optional : Arduino Uno, for PFS154 pdkprogsheild programmer (only for PFS154)
+- Optional : USB2TTL adapter, for running some uart examples
+- Soldering iron, for soldering self-made breakout boards and programmers.
+
+# Toolchain overview
+- Compiler: SDCC
+- SDK: like 8051, no SDK required
+- Programming tool: easypdkprog with easypdk programmer / pfsprog with arduino pdkprogsheild (Only for PFS154)
+- Debugging: no opensource solution
