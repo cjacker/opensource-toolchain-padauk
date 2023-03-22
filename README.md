@@ -56,9 +56,9 @@ The upstream project is https://github.com/jjflash65/Padauk-pfs154, but all cont
 
 The gerber file [gerber-pdkprogshield.zip](./pdkprogsheild/gerber-pdkprogshield.zip) can be sent to [JLC](https://www.jlc.com/) to make serveral piece of PCBs. 
 
-And you can refer to [pdkprogshield.bom.en.txt](./pdkprogsheild/pdkprogshield.bom.en.txt) to prepare resistors, inductors and other components.
+And you can refer to [pdkprogshield.bom.en.txt](./pdkprogsheild/pdkprogshield.bom.en.txt) to prepare capacitors, resistors, inductors and other components.
 
-For this programmer, you only need buy some general-purpose and standard SOP16 adapter boards to make your own breakout boards.
+For this programmer, you only need buy some general-purpose and standard SOP16 adapter boards as breakout boards.
 
 ### software
 The software and firmware for Arduino pdkprogsheild is at [pfsprog](./pdkprogsheild/pfsprog) dir.
