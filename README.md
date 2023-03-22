@@ -49,13 +49,24 @@ There are two possible combinations available.
 
 One is Arduino uno + [Arduino pdkprogsheild](https://github.com/jjflash65/Padauk-pfs154) (made by yourself) + PFS154 + SOP16 adatper. the cons is this solution only support programming PFS154, the pros is it very easy to solder for beginners.
 
-
+<img src="./pdkprogsheild/pics/pdkprogshield-r2.jpg" width="40%" />
 
 The upstream project is https://github.com/jjflash65/Padauk-pfs154, but all contents is in germany, I practiced / translated and put some useful resources at [pdkprogsheild](./pdkprogsheild) dir in this repo. 
 
 The gerber file [gerber-pdkprogshield.zip](./pdkprogsheild/gerber-pdkprogshield.zip) can be sent to [JLC](https://www.jlc.com/) to make serveral piece of PCBs. 
 
-And you can refer to [pdkprogshield.bom.en.txt](./pdkprogsheild/pdkprogshield.bom.en.txt) to prepare some resistors, inductors and other components.
+And you can refer to [pdkprogshield.bom.en.txt](./pdkprogsheild/pdkprogshield.bom.en.txt) to prepare resistors, inductors and other components.
+
+For this programmer, you only need buy some general-purpose and standard SOP16 adapters to make your own breakout boards.
+
+## Easypdk programmer
+
+Easypdk programmer is more useful and more powerful. the cons is it's more expensive and very hard to solder at home for beginners, the pros is it can support more parts than Arduino pdkprogsheild.
+
+
+
+
+You can refer to https://github.com/free-pdk/easy-pdk-programmer-hardware for all resources.
 
 
 # Compiler
