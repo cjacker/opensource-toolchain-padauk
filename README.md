@@ -99,7 +99,7 @@ For easypdk programmer, due to the width between two 8pin female headers is diff
 
 <img src="./easypdkprog-breakout-board-jlc/sop16-pic.png" width="40%" />
 
-<img src="./easypdkprog-breakout-board-jlc/sop8-sop16-pic.png" width="40%" />
+<img src="./easypdkprog-breakout-board-jlc/sop8-sop16.jpg" width="40%" />
 
 The software and firmware for easypdk programmer is https://github.com/free-pdk/easy-pdk-programmer-software.
 
