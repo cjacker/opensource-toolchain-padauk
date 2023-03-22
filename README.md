@@ -1,6 +1,6 @@
 # Opensource toolchain tutorial for Padauk MCU
 
-**Padauk MCU drew the attention of developers due to its extremely low price. However, with the emergence of CH32V003, this situation has changed. Compared to 10 cents CH32V003 (48MHz 32bit RVEC with 2k ram, 16k flash and a bunch of periperals), Padauk has very limited resources and no peripherals support, which makes it less attractive. Therefore it is not recommended to spend too much time on it.**
+**Padauk MCU drew the attention of developers due to its extremely low price. However, with the emergence of CH32V003, this situation has changed. Compared to less than 10 cents CH32V003 (48MHz 32bit RVEC with 2k ram, 16k flash and a bunch of periperals), Padauk has very limited resources and no hardware peripherals support, which makes it less attractive. Therefore it is not recommended to spend too much time on it.**
 
 > PADAUK Technology Co., Ltd. founded in Feb of 2005 and we are devoted to make development of microcontroller as company core. We insist on having our own IP and development system(IDE/ICE), also the Writer is
 > self-developed in order to make sure whole technology can be fully grasped. Therefore, it’s available to provide better design performance and programming flexibility issues which can supply perfect solution and meet inquiry from customer timely.
