@@ -59,6 +59,8 @@ And you can refer to [pdkprogshield.bom.en.txt](./pdkprogsheild/pdkprogshield.bo
 
 For this programmer, you only need buy some general-purpose and standard SOP16 adapter boards to make your own breakout boards.
 
+The software and firmware for Arduino pdkprogsheild is at [pfsprog](./pdkprogsheild/pfsprog) dir.
+
 ## Easypdk programmer
 
 Easypdk programmer is more useful and more powerful. the cons is it's more expensive and very hard to solder at home for beginners, the pros is it can support more parts than Arduino pdkprogsheild.
@@ -69,7 +71,12 @@ You can refer to https://github.com/free-pdk/easy-pdk-programmer-hardware for al
 
 For easypdk programmer, due to the width between two 8pin female headers is different from Arduino pdkprogsheild, you may need to make another adapter to use general-purpose SOP16 adapter board, or use [easypdkprog-breakout-board](./easypdkprog-breakout-board-jlc), these sop16 and sop8 breakout board can be produced by JLC online service, related sources and schematics are also provided at the same dir.
 
-<img src="./easypdkprog-breakout-board-jlc/sop16-pic.png" />
+<img src="./easypdkprog-breakout-board-jlc/sop16-pic.png" width="40%" />
+
+The software and firmware for easypdk programmer is https://github.com/free-pdk/easy-pdk-programmer-software.
+
+NOTE, the sop8 and sop16 breakout board are suite for PFS154/PFS173/PFS123/PFC161, please verify the pinout layout of your parts before solder it.
+
 
 # Compiler
 
@@ -91,4 +98,12 @@ A good start is `free-pdk-examples`, but do not use the upstream repo, there are
 git checkout https://github.com/cjacker/free-pdk-examples.git
 git checkout __io_set0
 ```
+
+# Programming
+
+## for Arduino pdkprogsheild 
+
+## for EasyPDK programmer
+
+
 
