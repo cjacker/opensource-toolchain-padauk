@@ -5,7 +5,7 @@
 
 Padauk was one of the cheapest MCU manufacturer in the world. You can google “3 cents MCU” to find more information at your discretion. In fact, the retail price of PFS154 (MTP) is approximately 4 cents, and PFS123 SOP16 is around 6 cents.
 
-**With WCH releasing ch32v003 at the price of only 10 cents, the situation has already changed.**
+**With WCH releasing ch32v003 (48MHz 32bit rvec with 2k ram, 16k flash and a bunch of periperals) at the price of only 10 cents, the situation has already changed.**
 
 Padauk mainly manufactures One Time Programmable (OTP) parts, But there still some Multiple Time Programmable (MTP) ICs available. Additionally, the majority of their ICs use SOP packaging, the QFN packaging may not be widely available through distributors and might only be accessible through direct requests.
 
