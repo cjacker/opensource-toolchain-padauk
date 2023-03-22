@@ -49,6 +49,7 @@ There are two possible combinations available.
 
 One programming solution is Arduino uno + [Arduino pdkprogsheild](https://github.com/jjflash65/Padauk-pfs154) (made by yourself) + PFS154 + SOP16 adatper. the cons is this solution only support programming PFS154, the pros is it's very easy to solder at home for beginners.
 
+### hardware
 <img src="./pdkprogsheild/pics/pdkprogshield-r2.jpg" width="40%" />
 
 The upstream project is https://github.com/jjflash65/Padauk-pfs154, but all contents is in germany, I practiced / translated and put some useful resources at [pdkprogsheild](./pdkprogsheild) dir in this repo. 
@@ -59,7 +60,32 @@ And you can refer to [pdkprogshield.bom.en.txt](./pdkprogsheild/pdkprogshield.bo
 
 For this programmer, you only need buy some general-purpose and standard SOP16 adapter boards to make your own breakout boards.
 
+### software
 The software and firmware for Arduino pdkprogsheild is at [pfsprog](./pdkprogsheild/pfsprog) dir.
+
+To build the firmware for Arduino uno, you need have avr-gcc installed
+```
+cd pdkprogsheild/pfsprog/firmware
+make
+```
+The `pfs154_prog2_1.hex` is the firmware you need to flash to Arduino uno as:
+```
+avrdude -c arduino -p atmega328p -P /dev/ttyACM0 -b 115200 -B1 -V -U flash:w:pfs154_prog2_1.hex
+```
+Or you can use `flash-firmware.sh` to flash it.
+
+**NOTE :** Remember to remove the pdkprogsheild from Arduino uno before flashing the firmware, otherwise it will report failure to program.
+
+The utility work with Arduino pdkprogsheild is `pfsprog`, it is written in free pascal and you need have fpc installed, the building process is very simple:
+
+```
+cd pdkprogsheild/pfsprog
+make
+sudo install -m0755 pfsprog /usr/bin
+```
+
+I leave the pre-built `pfs154_prog2_1.hex` firmware and `pfsprog` at corresponding dir, you can also use these pre-built binary directly.
+
 
 ## Easypdk programmer
 
@@ -73,9 +99,16 @@ For easypdk programmer, due to the width between two 8pin female headers is diff
 
 <img src="./easypdkprog-breakout-board-jlc/sop16-pic.png" width="40%" />
 
+<img src="./easypdkprog-breakout-board-jlc/sop8-sop16-pic.png" width="40%" />
+
 The software and firmware for easypdk programmer is https://github.com/free-pdk/easy-pdk-programmer-software.
 
 NOTE, the sop8 and sop16 breakout board are suite for PFS154/PFS173/PFS123/PFC161, please verify the pinout layout of your parts before solder it.
+
+## Dock board
+You can use breadboard with above breakout boards, for convenient, I made a dock for them, it is able to support two different width
+
+<img src="./pdkprogsheild/pics/devboards.jpg" width="40%" />
 
 
 # Compiler
@@ -125,6 +158,26 @@ TARGET_VDD = 3.3
 # Programming
 
 ## for Arduino pdkprogsheild 
+Prepare the pdkprogsheild hardware and `pfsprog` software as mentioned above.
+
+Using `BlinkLED` as example, after built successfully
+
+```
+pfsprog txwr /dev/ttyACM0 .output/BlinkLED_PFS154.ihx nowait
+```
+
+The output looks like:
+
+```
+ waiting for programmer...
+
+ ID: 0x0aa1 found, PFS154 present...
+ Words to flash: 81
+
+ Writing|################################################### 100% 0.45s
+
+ All is done...
+```
 
 ## for EasyPDK programmer
 
