@@ -137,7 +137,7 @@ dfu-util -d 0483:df11 -a "@Internal Flash  /0x08000000/064*0002Kg" --dfuse-addre
 
 I also put the pre-built firmware [EASYPDKPROG.dfu](./EASYPDKPROG.dfu) in this repo, you can use it directly.
 
-After `easypdkprog` installed, you can run `easypdkprog list` to list out all supported parts:
+After `easypdkprog` installed, run `easypdkprog list` will list all supported parts
 
 ```
 $ easypdkprog list
@@ -278,6 +278,3 @@ Writing IC (81 words)... done.
 Calibrating IC
 * IHRC SYSCLK=1000000Hz @ 4.00V ... calibration result: 1004416Hz (0x84)  done.
 ```
-
-
-
