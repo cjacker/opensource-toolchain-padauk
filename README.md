@@ -57,16 +57,17 @@ The gerber file [gerber-pdkprogshield.zip](./pdkprogsheild/gerber-pdkprogshield.
 
 And you can refer to [pdkprogshield.bom.en.txt](./pdkprogsheild/pdkprogshield.bom.en.txt) to prepare resistors, inductors and other components.
 
-For this programmer, you only need buy some general-purpose and standard SOP16 adapters to make your own breakout boards.
+For this programmer, you only need buy some general-purpose and standard SOP16 adapter boards to make your own breakout boards.
 
 ## Easypdk programmer
 
 Easypdk programmer is more useful and more powerful. the cons is it's more expensive and very hard to solder at home for beginners, the pros is it can support more parts than Arduino pdkprogsheild.
 
-
-
+<img src="./misc/easypdkprogrammer.jpg" width=40% />
 
 You can refer to https://github.com/free-pdk/easy-pdk-programmer-hardware for all resources.
+
+For easypdk programmer, due to the width between two 8pin female headers is different from Arduino pdkprogsheild, you may need to make another adapter to use general-purpose SOP16 adapter board, or use [easypdkprog-breakout-board](./easypdkprog-breakout-board-jlc), these sop16 and sop8 breakout board can be produced by JLC online service, related sources and schematics are also provided at the same dir.
 
 
 # Compiler
