@@ -108,7 +108,7 @@ NOTE, the sop8 and sop16 breakout board are suite for PFS154/PFS173/PFS123/PFC16
 ## Dock board
 You can use breadboard with above breakout boards, for convenient, I made a dock for them, it is able to support two different width
 
-<img src="./pdkprogsheild/pics/devboards.jpg" width="40%" />
+<img src="./misc/devboards.jpg" width="40%" />
 
 
 # Compiler
