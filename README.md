@@ -278,3 +278,5 @@ Writing IC (81 words)... done.
 Calibrating IC
 * IHRC SYSCLK=1000000Hz @ 4.00V ... calibration result: 1004416Hz (0x84)  done.
 ```
+
+Easypdk programmer can also support running device directly after programmed and can work as UART adapter, but not very useful since you can not connect peripherals to it, you can try it with `Serial_HelloWorld` example of `free_pdk_examples`, after built and programmed, run `easypdkprog -r <vdd> start` or `make run`.
